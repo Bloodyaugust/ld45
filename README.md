@@ -1,3 +1,8 @@
-# godot-template
+# ld45
 
-A template for Godot projects.
+Ludum Dare entry for #45.
+
+Greyson Richey
+Ethan Ransom
+Nick Lives
+Jon Bardin
