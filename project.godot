@@ -21,7 +21,16 @@ _global_script_class_icons={
 [application]
 
 config/name="ld45"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+action_types="*res://lib/redux/action_types.gd"
+actions="*res://lib/redux/actions.gd"
+store="*res://lib/redux/store.gd"
+reducers="*res://lib/redux/reducers.gd"
+main="*res://lib/redux/main.gd"
 
 [rendering]
 
