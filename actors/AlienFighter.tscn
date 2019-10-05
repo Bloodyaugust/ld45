@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/AlienFighter.png" type="Texture" id=1]
+
+[node name="AlienFighter" type="Sprite" groups=[
+"Draggables",
+"Aliens",
+"Actors",
+]]
+texture = ExtResource( 1 )

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/Meteor.png" type="Texture" id=1]
+
+[node name="Meteor" type="Sprite" groups=[
+"Clickables",
+]]
+texture = ExtResource( 1 )
