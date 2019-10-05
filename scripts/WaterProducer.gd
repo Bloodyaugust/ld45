@@ -8,10 +8,9 @@ func _ready():
 func _process(delta):
 	var amount = deliveryRate * delta 
 	
-	var consumers = []
-	
-	# # for debug:
-	# consumers.push_back(get_node("../WaterConsumer"))
-	
-	for node in consumers:
-		node.deliverWater(amount)
+	var consumers = get_tree().get_nodes_in_group("WaterConsumers")
+	for consumer in []:
+		#var dist = consumer.get_global_pos().distance_to(self.get_global_pos())
+		#if dist < 10:
+		#	node.deliverWater(amount)
+		pass
