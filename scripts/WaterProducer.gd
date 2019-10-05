@@ -2,12 +2,12 @@ extends Node2D
 
 export var deliveryRate:float
 
-# what priority to return
-export var water_priority:float
-
 var waterees = []
 
+onready var actor = $".."
+
 func _ready():
+	# actor.register_behavior(self)
 	pass
 
 func _process(delta):
@@ -26,6 +26,11 @@ func get_waterees():
 			waterees.push_back(parent)
 	return waterees
 
-# TODO: make dynamic based on distance to dry plants
+func execute_behavior():
+	var consumers = get_tree().get_nodes_in_group("WaterConsumers")
+	
+	actor.move_toward_target()
+
+# TODO: make dynamic based on distance to dry plants?
 func evaluate_priority():
-	return water_priority
+	return 0.3
