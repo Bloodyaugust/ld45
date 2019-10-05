@@ -8,7 +8,6 @@ radius = 50.0
 [node name="WaterConsumer" type="Node2D" groups=[
 "WaterConsumers",
 ]]
-position = Vector2( 268, 313 )
 script = ExtResource( 1 )
 dessicateRate = 0.05
 

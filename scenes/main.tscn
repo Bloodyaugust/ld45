@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://actors/AlienWaterer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/AlienFighter.tscn" type="PackedScene" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://actors/Twig.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sprites/LevelBorder.png" type="Texture" id=9]
 [ext_resource path="res://sprites/BarrenTexture.png" type="Texture" id=10]
+[ext_resource path="res://actors/AlienWatererHusk.tscn" type="PackedScene" id=11]
+[ext_resource path="res://actors/AlienFighterHusk.tscn" type="PackedScene" id=12]
+[ext_resource path="res://actors/EnemyFighterHusk.tscn" type="PackedScene" id=13]
+[ext_resource path="res://actors/SlimeHusk.tscn" type="PackedScene" id=14]
+[ext_resource path="res://actors/TreeHusk.tscn" type="PackedScene" id=15]
+[ext_resource path="res://actors/TwigHusk.tscn" type="PackedScene" id=16]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Camera2D
@@ -95,3 +101,21 @@ z_index = -1
 texture = ExtResource( 10 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3400, 1700 )
+
+[node name="AlienWatererHusk" parent="LevelBorder/LevelBase" instance=ExtResource( 11 )]
+position = Vector2( 916.06, -40.4112 )
+
+[node name="AlienFighterHusk" parent="LevelBorder/LevelBase" instance=ExtResource( 12 )]
+position = Vector2( 636.323, -148.429 )
+
+[node name="EnemyFighterHusk" parent="LevelBorder/LevelBase" instance=ExtResource( 13 )]
+position = Vector2( 292.883, -148.429 )
+
+[node name="SlimeHusk" parent="LevelBorder/LevelBase" instance=ExtResource( 14 )]
+position = Vector2( -33.9389, -187.204 )
+
+[node name="TreeHusk" parent="LevelBorder/LevelBase" instance=ExtResource( 15 )]
+position = Vector2( 290.113, -483.559 )
+
+[node name="TwigHusk" parent="LevelBorder/LevelBase" instance=ExtResource( 16 )]
+position = Vector2( 669.559, -519.565 )
