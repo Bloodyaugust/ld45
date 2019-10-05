@@ -34,7 +34,9 @@ dessicateRate = 0.1
 texture = ExtResource( 3 )
 
 [node name="Husk" type="Sprite" parent="Water Test Boi2"]
+position = Vector2( 0, -1 )
 texture = ExtResource( 4 )
 
 [node name="WaterProducer2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 559, 281 )
+deliveryRate = 0.15
