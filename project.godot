@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://scripts/classes/Actor.gd"
+}, {
+"base": "Node",
+"class": "IdleBehavior",
+"language": "GDScript",
+"path": "res://scripts/classes/IdleBehavior.gd"
+}, {
 "base": "Node",
 "class": "LevelLoader",
 "language": "GDScript",
 "path": "res://scripts/classes/LevelLoader.gd"
 } ]
 _global_script_class_icons={
+"Actor": "",
+"IdleBehavior": "",
 "LevelLoader": ""
 }
 

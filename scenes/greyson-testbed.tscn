@@ -1,3 +1,97 @@
-[gd_scene format=2]
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://actors/AlienWaterer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/AlienFighter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/EnemyFighter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/Meteor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://doodads/MeteorImpact.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actors/Slime.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/Tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actors/Twig.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/LevelBorder.png" type="Texture" id=9]
+[ext_resource path="res://sprites/BarrenTexture.png" type="Texture" id=10]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+export var camera_move_speed : float
+export var camera_zoom_speed : float
+export var camera_zoom_max: float
+export var camera_zoom_min: float
+
+func _physics_process(delta):
+  if Input.is_action_pressed(\"ui_right\"):
+    translate(Vector2(1, 0) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_left\"):
+    translate(Vector2(-1, 0) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_down\"):
+    translate(Vector2(0, 1) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_up\"):
+    translate(Vector2(0, -1) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_page_up\") && zoom.x > camera_zoom_min:
+    zoom = zoom + (Vector2(1, 1) * -camera_zoom_speed * delta)
+    print(zoom)
+  if Input.is_action_pressed(\"ui_page_down\") && zoom.x < camera_zoom_max:
+    zoom = zoom - (Vector2(1, 1) * -camera_zoom_speed * delta)
+    print(zoom)"
 
 [node name="Node2D" type="Node2D"]
+
+[node name="AlienWaterer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 374.737, 210.526 )
+z_index = 2
+
+[node name="AlienFighter" parent="." instance=ExtResource( 2 )]
+position = Vector2( 735.789, 197.895 )
+z_index = 2
+
+[node name="EnemyFighter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128.421, 328.421 )
+z_index = 2
+
+[node name="Meteor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 565.263, 426.316 )
+z_index = 2
+
+[node name="MeteorImpact" parent="." instance=ExtResource( 5 )]
+position = Vector2( 312.632, 557.895 )
+z_index = 2
+
+[node name="Slime" parent="." instance=ExtResource( 6 )]
+position = Vector2( 849.474, 468.421 )
+z_index = 2
+
+[node name="Tree" parent="." instance=ExtResource( 7 )]
+position = Vector2( 166.316, 97.8947 )
+z_index = 2
+
+[node name="Twig" parent="." instance=ExtResource( 8 )]
+position = Vector2( 566.316, 166.316 )
+z_index = 2
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2( 90.5264, 104.211 )
+current = true
+zoom = Vector2( 2, 2 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+script = SubResource( 1 )
+camera_move_speed = 1000.0
+camera_zoom_speed = 5.0
+camera_zoom_max = 5.0
+camera_zoom_min = 1.75
+
+[node name="LevelBorder" type="Sprite" parent="." groups=[
+"Doodads",
+]]
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="LevelBase" type="Sprite" parent="LevelBorder" groups=[
+"Doodads",
+]]
+position = Vector2( -9.01251, -185.659 )
+z_index = -1
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3400, 1700 )
