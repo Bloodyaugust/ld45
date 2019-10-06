@@ -24,4 +24,4 @@ deliveryRate = 0.2
 
 [node name="LiveAndDie" type="Node" parent="."]
 script = ExtResource( 5 )
-ageRate = 0.5
+ageRate = 0.02

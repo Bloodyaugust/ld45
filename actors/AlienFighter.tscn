@@ -21,4 +21,4 @@ script = ExtResource( 3 )
 
 [node name="LiveAndDie" type="Node" parent="."]
 script = ExtResource( 4 )
-ageRate = 0.2
+ageRate = 0.02
