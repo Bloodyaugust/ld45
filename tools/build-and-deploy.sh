@@ -18,13 +18,13 @@ mkdir build/win/
 
 echo "EXPORTING FOR LINUX"
 echo "-----------------------------"
-godot --export "Linux/X11" build/linux/farming-td.x86_64 -v
+godot --export "Linux/X11" build/linux/ld45.x86_64 -v
 echo "EXPORTING FOR OSX"
 echo "-----------------------------"
-godot --export "Mac OSX" build/osx/farming-td.dmg -v
+godot --export "Mac OSX" build/osx/ld45.dmg -v
 echo "EXPORTING FOR WINDOZE"
 echo "-----------------------------"
-godot --export "Windows Desktop" build/win/farming-td.exe -v
+godot --export "Windows Desktop" build/win/ld45.exe -v
 echo "-----------------------------"
 
 ls -al
@@ -39,6 +39,6 @@ butler login
 
 echo "Pushing builds with Butler"
 echo "-----------------------------"
-butler push build/linux/ synsugarstudio/farming-td:linux-alpha
-butler push build/osx/ synsugarstudio/farming-td:osx-alpha
-butler push build/win/ synsugarstudio/farming-td:win-alpha
+butler push build/linux/ synsugarstudio/ld45:linux-alpha
+butler push build/osx/ synsugarstudio/ld45:osx-alpha
+butler push build/win/ synsugarstudio/ld45:win-alpha
