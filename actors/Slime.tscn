@@ -4,13 +4,13 @@
 [ext_resource path="res://sprites/Slime.png" type="Texture" id=2]
 [ext_resource path="res://behaviors/WaterConsumer.tscn" type="PackedScene" id=3]
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="Node2D" groups=[
+"Slimes",
+"Actors",
+]]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." groups=[
-"Actors",
-"Slimes",
-]]
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="WaterConsumer" parent="." instance=ExtResource( 3 )]
