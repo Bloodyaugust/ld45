@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+export var camera_move_speed : float
+export var camera_zoom_speed : float
+export var camera_zoom_max: float
+export var camera_zoom_min: float
+
+func _physics_process(delta):
+  if Input.is_action_pressed(\"ui_right\"):
+    translate(Vector2(1, 0) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_left\"):
+    translate(Vector2(-1, 0) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_down\"):
+    translate(Vector2(0, 1) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_up\"):
+    translate(Vector2(0, -1) * camera_move_speed * delta)
+  if Input.is_action_pressed(\"ui_page_up\") && zoom.x > camera_zoom_min:
+    zoom = zoom + (Vector2(1, 1) * -camera_zoom_speed * delta)
+  if Input.is_action_pressed(\"ui_page_down\") && zoom.x < camera_zoom_max:
+    zoom = zoom - (Vector2(1, 1) * -camera_zoom_speed * delta)
+
+func _unhandled_input(event):
+  if event is InputEventMouseButton:
+    if event.is_pressed():
+        if event.button_index == BUTTON_WHEEL_UP && zoom.x > camera_zoom_min:
+            zoom = zoom + (Vector2(1, 1) * -camera_zoom_speed * get_process_delta_time())
+        if event.button_index == BUTTON_WHEEL_DOWN && zoom.x < camera_zoom_max:
+            zoom = zoom - (Vector2(1, 1) * -camera_zoom_speed * get_process_delta_time())"
+
+[node name="MainCamera" type="Camera2D"]
+position = Vector2( 90.5264, 104.211 )
+current = true
+zoom = Vector2( 5, 5 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+script = SubResource( 1 )
+camera_move_speed = 1000.0
+camera_zoom_speed = 5.0
+camera_zoom_max = 5.0
+camera_zoom_min = 1.75
