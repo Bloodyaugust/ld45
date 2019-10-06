@@ -7,6 +7,7 @@ onready var level_base := root.find_node("LevelBase", true, false)
 onready var level_rect : Rect2 = level_base.get_rect()
 
 onready var _enemy_meteor : PackedScene = preload("res://actors/EnemyMeteor.tscn")
+onready var _defender_meteor : PackedScene = preload("res://actors/DefenderMeteor.tscn")
 onready var _startup_meteor : PackedScene = preload("res://actors/StartupMeteor.tscn")
 
 var _events : Array = [
@@ -17,6 +18,10 @@ var _events : Array = [
   {
     "type": "condition",
     "function": "_do_enemy_meteor"
+  },
+  {
+    "type": "condition",
+    "function": "_do_alien_defender_meteor"
   }
 ]
 var _rng : RandomNumberGenerator = RandomNumberGenerator.new()
@@ -57,3 +62,15 @@ func _do_enemy_meteor():
       var new_enemy_meteor := _enemy_meteor.instance()
       new_enemy_meteor.position = Vector2(level_rect.position.x + (level_rect.size.x * _rng.randf()), level_rect.position.y + (level_rect.size.y * _rng.randf()))
       root.add_child(new_enemy_meteor)
+
+var _alien_defender_interval : float = 5
+var _time_to_alien_defender : float = 5
+func _do_alien_defender_meteor():
+  if tree.get_nodes_in_group("Enemies").size() > 0 && tree.get_nodes_in_group("Defenders").size() <= 1:
+    _time_to_alien_defender -= get_process_delta_time()
+    if _time_to_alien_defender <= 0:
+      _time_to_alien_defender = _alien_defender_interval
+
+      var new_defender_meteor := _defender_meteor.instance()
+      new_defender_meteor.position = Vector2(level_rect.position.x + (level_rect.size.x * _rng.randf()), level_rect.position.y + (level_rect.size.y * _rng.randf()))
+      root.add_child(new_defender_meteor)

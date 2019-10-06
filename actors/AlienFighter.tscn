@@ -11,6 +11,7 @@
 "Actors",
 "Aliens",
 "Draggables",
+"Defenders",
 ]]
 z_index = 2
 script = ExtResource( 1 )
