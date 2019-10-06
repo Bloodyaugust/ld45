@@ -1,10 +1,11 @@
 extends Node2D
 
 export var dessicateRate:float
-
 export var huskPath:String = "res://actors/SlimeHusk.tscn"
-onready var huskScene = load(huskPath)
 
+signal watered
+
+onready var huskScene = load(huskPath)
 onready var actor = $"../"
 
 var water = 1
@@ -23,12 +24,13 @@ func huskify():
 	$"../../".add_child(husk)
 	husk.position = actor.position # must be after add_child?
 	actor.queue_free()
-	
+
 func dessicate(amount):
 	water = setWaterClamped(water - amount)
 
 func deliverWater(amount):
 	water = setWaterClamped(water + amount)
+	emit_signal("watered")
 
 func isDessicated():
 	return water <= 0.0

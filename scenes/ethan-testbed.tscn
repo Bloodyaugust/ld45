@@ -46,12 +46,9 @@ func _physics_process(delta):
 [node name="AlienWaterer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 374.737, 210.526 )
 z_index = 2
-move_speed = 75.0
 
 [node name="AlienFighter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 735.789, 197.895 )
-z_index = 2
-move_speed = 60.0
 
 [node name="EnemyFighter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128.421, 328.421 )
@@ -67,7 +64,6 @@ z_index = 2
 
 [node name="Slime" parent="." instance=ExtResource( 6 )]
 position = Vector2( 849.474, 468.421 )
-z_index = 2
 
 [node name="Tree" parent="." instance=ExtResource( 7 )]
 position = Vector2( 166.316, 97.8947 )

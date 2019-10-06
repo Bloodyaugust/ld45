@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "ProcreateOrDie",
 "language": "GDScript",
 "path": "res://scripts/ProcreateOrDie.gd"
+}, {
+"base": "Node2D",
+"class": "ReproducesAsexually",
+"language": "GDScript",
+"path": "res://scripts/classes/ReproducesAsexually.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "IdleBehavior": "",
 "LevelLoader": "",
 "LiveAndDie": "",
-"ProcreateOrDie": ""
+"ProcreateOrDie": "",
+"ReproducesAsexually": ""
 }
 
 [application]
