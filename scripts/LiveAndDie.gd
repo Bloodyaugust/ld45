@@ -29,4 +29,4 @@ func _setHealthClamped(unclampedHealth):
   return clamp(unclampedHealth, 0, 1)
 
 func takeDamage(amount):
-  health = _setHealthClamped(health + amount)
+  health = _setHealthClamped(health - amount)
