@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/AlienFighter.png" type="Texture" id=2]
 [ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=3]
+[ext_resource path="res://scripts/LiveAndDie.gd" type="Script" id=4]
 
 [node name="AlienFighter" type="Node2D"]
 script = ExtResource( 1 )
 move_speed = 5.0
 
 [node name="Sprite" type="Sprite" parent="." groups=[
-"Draggables",
 "Aliens",
 "Actors",
+"Draggables",
 ]]
 texture = ExtResource( 2 )
 
 [node name="IdleBehavior" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="LiveAndDie" type="Node" parent="."]
+script = ExtResource( 4 )
+ageRate = 0.2
