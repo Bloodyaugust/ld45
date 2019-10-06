@@ -46,10 +46,12 @@ func _physics_process(delta):
 [node name="AlienWaterer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 374.737, 210.526 )
 z_index = 2
+move_speed = 75.0
 
 [node name="AlienFighter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 735.789, 197.895 )
 z_index = 2
+move_speed = 60.0
 
 [node name="EnemyFighter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128.421, 328.421 )
@@ -90,13 +92,15 @@ camera_zoom_min = 1.75
 [node name="LevelBorder" type="Sprite" parent="." groups=[
 "Doodads",
 ]]
+position = Vector2( 0, 1.19775 )
 z_index = 1
 texture = ExtResource( 9 )
 
 [node name="LevelBase" type="Sprite" parent="LevelBorder" groups=[
 "Doodads",
 ]]
-position = Vector2( -9.01251, -185.659 )
+position = Vector2( -9.01251, -187.456 )
+scale = Vector2( 1, 0.999295 )
 z_index = -1
 texture = ExtResource( 10 )
 region_enabled = true

@@ -10,7 +10,7 @@ var system_behaviors : Dictionary = {}
 func move_toward_target(target):
 #  print("moving toward: " + str(target) + " at speed " + str(move_speed))
   var direction_vector : Vector2 = target - position
-  translate(direction_vector * move_speed * get_process_delta_time())
+  translate(direction_vector.normalized() * move_speed * get_process_delta_time())
 
 func register_behavior(behavior):
   system_behaviors[behavior.name] = behavior
@@ -34,4 +34,4 @@ func _process(delta):
     system_behaviors[behavior_priorities[0]["name"]].execute_behavior()
 
 func _sort_behavior_priorities(a, b):
-  return a["priority"] < b["priority"]
+  return a["priority"] > b["priority"]
