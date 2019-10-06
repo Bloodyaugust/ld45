@@ -32,6 +32,7 @@ func execute_behavior():
     if actor != actorToHump:
       actor.move_speed = chaseSpeed
       actor.move_toward_target(actorToHump.position)
+      
       if actor.position.distance_to(actorToHump.position) < humpDistance:
           desireToProcreate = 0.0
           actorToHump.find_node("ProcreateOrDie").desireToProcreate = 0.0
