@@ -12,7 +12,6 @@ func _process(delta):
     actor.position = actor.get_global_mouse_position() - dragAttach
 
 func _on_ClickableArea_input_event(viewport, event, shape_idx):
-  print("on click")
   if event is InputEventMouseButton:
     if event.is_pressed():
       dragAttach = actor.get_local_mouse_position()
