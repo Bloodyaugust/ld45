@@ -9,6 +9,7 @@ radius = 373.8
 radius = 704.841
 
 [node name="WaterProducer" type="Node2D"]
+z_index = 2
 script = ExtResource( 1 )
 deliveryRate = 0.05
 

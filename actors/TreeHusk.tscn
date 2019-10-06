@@ -5,4 +5,5 @@
 [node name="TreeHusk" type="Node2D"]
 
 [node name="TreeHusk" type="Sprite" parent="."]
+z_index = 2
 texture = ExtResource( 1 )

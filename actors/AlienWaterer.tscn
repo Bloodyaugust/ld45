@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Alien.png" type="Texture" id=2]
@@ -10,13 +10,15 @@
 
 [node name="AlienWaterer" type="Node2D" groups=[
 "Actors",
-"Draggables",
 "Aliens",
+"Draggables",
 ]]
 script = ExtResource( 1 )
 move_speed = 75.0
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="IdleBehavior" type="Node" parent="."]

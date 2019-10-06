@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/AlienFighter.png" type="Texture" id=2]
@@ -9,9 +9,10 @@
 
 [node name="AlienFighter" type="Node2D" groups=[
 "Actors",
-"Draggables",
 "Aliens",
+"Draggables",
 ]]
+z_index = 2
 script = ExtResource( 1 )
 move_speed = 60.0
 

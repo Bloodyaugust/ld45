@@ -11,6 +11,7 @@
 "Clickables",
 "Enemies",
 ]]
+z_index = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -5,4 +5,5 @@
 [node name="EnemyFighterHusk" type="Node2D"]
 
 [node name="EnemyFighterHusk" type="Sprite" parent="."]
+z_index = 2
 texture = ExtResource( 1 )
