@@ -39,6 +39,6 @@ butler login
 
 echo "Pushing builds with Butler"
 echo "-----------------------------"
-butler push build/linux/ synsugarstudio/ld45:linux-alpha
-butler push build/osx/ synsugarstudio/ld45:osx-alpha
-butler push build/win/ synsugarstudio/ld45:win-alpha
+butler push build/linux/ synsugarstudio/ld-45:linux-alpha
+butler push build/osx/ synsugarstudio/ld-45:osx-alpha
+butler push build/win/ synsugarstudio/ld-45:win-alpha
