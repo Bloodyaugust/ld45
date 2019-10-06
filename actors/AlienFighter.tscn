@@ -5,14 +5,15 @@
 [ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=3]
 [ext_resource path="res://scripts/LiveAndDie.gd" type="Script" id=4]
 [ext_resource path="res://behaviors/Draggable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/ProcreateOrDie.gd" type="Script" id=6]
 
 [node name="AlienFighter" type="Node2D" groups=[
-"Aliens",
-"Draggables",
 "Actors",
+"Draggables",
+"Aliens",
 ]]
 script = ExtResource( 1 )
-move_speed = 5.0
+move_speed = 60.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -22,6 +23,9 @@ script = ExtResource( 3 )
 
 [node name="LiveAndDie" type="Node" parent="."]
 script = ExtResource( 4 )
-ageRate = 0.02
+ageRate = 0.025
 
 [node name="Draggable" parent="." instance=ExtResource( 5 )]
+
+[node name="ProcreateOrDie" type="Node" parent="."]
+script = ExtResource( 6 )

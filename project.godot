@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "LiveAndDie",
 "language": "GDScript",
 "path": "res://scripts/LiveAndDie.gd"
+}, {
+"base": "Node",
+"class": "ProcreateOrDie",
+"language": "GDScript",
+"path": "res://scripts/ProcreateOrDie.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "Hunt": "",
 "IdleBehavior": "",
 "LevelLoader": "",
-"LiveAndDie": ""
+"LiveAndDie": "",
+"ProcreateOrDie": ""
 }
 
 [application]
