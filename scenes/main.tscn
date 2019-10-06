@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/GameEvents.gd" type="Script" id=1]
 [ext_resource path="res://sprites/LevelBorder.png" type="Texture" id=2]
 [ext_resource path="res://sprites/BarrenTexture.png" type="Texture" id=3]
+[ext_resource path="res://doodads/ParallaxBackground.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Camera2D
@@ -57,3 +58,5 @@ z_index = -1
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3400, 1700 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
