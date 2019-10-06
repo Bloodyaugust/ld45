@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "LevelLoader",
 "language": "GDScript",
 "path": "res://scripts/classes/LevelLoader.gd"
+}, {
+"base": "Node",
+"class": "LiveAndDie",
+"language": "GDScript",
+"path": "res://scripts/LiveAndDie.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "IdleBehavior": "",
-"LevelLoader": ""
+"LevelLoader": "",
+"LiveAndDie": ""
 }
 
 [application]
