@@ -40,3 +40,7 @@ fuck_threshold = 0.4
 
 [node name="Farming" type="Node" parent="."]
 script = ExtResource( 8 )
+planting_desire_per_second = 0.025
+planting_distance = 200.0
+planting_randomize_distance = 500.0
+time_to_plant = 2.5

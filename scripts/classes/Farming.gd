@@ -1,6 +1,7 @@
 extends Node
 class_name Farming
 
+export var planting_desire_per_second : float
 export var planting_distance : float
 export var planting_randomize_distance : float
 export var time_to_plant : float
@@ -10,12 +11,13 @@ onready var tree := get_tree()
 onready var root := tree.get_root()
 onready var tree_actor := preload("res://actors/Tree.tscn")
 
-var _planting_target : Vector2
+var _planting_target
 var _planting_time : float = 0
+var _planting_desire : float = 0
 
 func evaluate_priority():
-  if tree.get_nodes_in_group("Slimes").size > 0:
-    return 1
+  if tree.get_nodes_in_group("Slimes").size() > 0:
+    return _planting_desire * 0.5
   else:
     return 0
 
@@ -34,10 +36,15 @@ func execute_behavior():
       root.add_child(new_plant)
 
       _planting_time = 0
+      _planting_desire = 0
       _planting_target = null
 
 func _ready():
   actor.register_behavior(self)
+
+func _process(delta):
+  _planting_desire += planting_desire_per_second * delta
+  _planting_desire = clamp(_planting_desire, 0, 1)
 
 func _identify_slime_target() -> Vector2:
   var slimes := tree.get_nodes_in_group("Slimes")
