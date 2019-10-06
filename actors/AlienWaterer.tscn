@@ -35,3 +35,4 @@ ageRate = 0.02
 
 [node name="ProcreateOrDie" type="Node" parent="."]
 script = ExtResource( 7 )
+fuck_threshold = 0.4

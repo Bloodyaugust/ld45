@@ -1,6 +1,9 @@
 extends Node
 class_name ProcreateOrDie
 
+export var sexinessRate : float = 0.025
+export var fuck_threshold : float
+
 onready var actor : Actor = $"../"
 onready var tree := get_tree()
 onready var root := tree.get_root()
@@ -8,7 +11,6 @@ onready var _klassAlienWaterer : PackedScene = load("res://actors/AlienWaterer.t
 onready var _klassAlienFighter : PackedScene = load("res://actors/AlienFighter.tscn")
 
 var desireToProcreate = 0.0
-var sexinessRate = 0.025
 var humpDistance = 150.0
 var chaseSpeed = 300.0
 
@@ -20,7 +22,10 @@ func _increaseSexDrive(amount):
   
 func evaluate_priority():
   #print("should_fuck?", desireToProcreate)
-  return desireToProcreate
+  if desireToProcreate >= fuck_threshold:
+    return desireToProcreate
+  else:
+    return 0
 
 func execute_behavior():
   for actorToHump in tree.get_nodes_in_group("Aliens"):

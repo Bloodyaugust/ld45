@@ -7,7 +7,7 @@ var idleSpeed = 100.0
 var randomTarget = Vector2(0, 0)
 
 func evaluate_priority():
-  return 0.5
+  return 0.1
 
 func execute_behavior():
   #print("executing idle behavior")
