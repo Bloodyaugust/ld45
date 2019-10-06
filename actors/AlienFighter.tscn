@@ -12,7 +12,7 @@
 "Actors",
 ]]
 script = ExtResource( 1 )
-move_speed = 5.0
+move_speed = 60.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
