@@ -19,10 +19,10 @@ func execute_behavior():
   actor.move_toward_target(randomTarget)
 
 func _pickRandomTarget():
-  var min_x = -1800
-  var max_x = 1800
-  var min_y = -1800
-  var max_y = 1800
+  var min_x = -1200
+  var max_x = 1200
+  var min_y = -1200
+  var max_y = 1200
   randomTarget = Vector2(rand_range(min_x, max_x), rand_range(min_y, max_y))
 
 func _ready():

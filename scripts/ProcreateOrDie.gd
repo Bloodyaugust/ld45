@@ -8,9 +8,9 @@ onready var _klassAlienWaterer : PackedScene = load("res://actors/AlienWaterer.t
 onready var _klassAlienFighter : PackedScene = load("res://actors/AlienFighter.tscn")
 
 var desireToProcreate = 0.0
-var sexinessRate = 0.05
-var humpDistance = 200.0
-var chaseSpeed = 200.0
+var sexinessRate = 0.025
+var humpDistance = 150.0
+var chaseSpeed = 300.0
 
 func _process(delta):
   _increaseSexDrive(delta * sexinessRate)
