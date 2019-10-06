@@ -35,14 +35,14 @@ func execute_behavior():
       if actor.position.distance_to(actorToHump.position) < humpDistance:
           desireToProcreate = 0.0
           actorToHump.find_node("ProcreateOrDie").desireToProcreate = 0.0
-          if rand_range(0.0, 1.0) > 0.5:
-            var newAlienWaterer := _klassAlienWaterer.instance()
-            newAlienWaterer.position = actor.position + Vector2(0.0, 250.0)
-            root.add_child(newAlienWaterer)
-          else:
+          if randf() > 0.8 && tree.get_nodes_in_group("Defenders").size() >= 1:
             var newAlienFighter := _klassAlienFighter.instance()
             newAlienFighter.position = actor.position + Vector2(0.0, 250.0)
-            root.add_child(newAlienFighter)                 
+            root.add_child(newAlienFighter)
+          else:
+            var newAlienWaterer := _klassAlienWaterer.instance()
+            newAlienWaterer.position = actor.position + Vector2(0.0, 250.0)
+            root.add_child(newAlienWaterer)               
 
           break
           
