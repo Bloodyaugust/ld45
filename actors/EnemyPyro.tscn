@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
-[ext_resource path="res://sprites/Foe.png" type="Texture" id=2]
+[ext_resource path="res://sprites/FoeFire.png" type="Texture" id=2]
 [ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=3]
-[ext_resource path="res://scripts/LiveAndDie.gd" type="Script" id=4]
-[ext_resource path="res://scripts/classes/Hunt.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Pyromaniac.gd" type="Script" id=4]
+[ext_resource path="res://behaviors/Burnable.tscn" type="PackedScene" id=5]
 
 [node name="EnemyFighter" type="Node2D" groups=[
 "Enemies",
@@ -23,11 +23,9 @@ script = ExtResource( 3 )
 
 [node name="LiveAndDie" type="Node" parent="."]
 script = ExtResource( 4 )
-ageRate = 0.01
 
-[node name="Hunt" type="Node" parent="."]
-script = ExtResource( 5 )
-attack_damage_per_second = 0.25
-attack_distance = 200.0
-hunt_desire_per_second = 0.01
-target_group = "Aliens"
+[node name="Burnable" parent="." instance=ExtResource( 5 )]
+areaOfEffect = 300
+
+[node name="Pyromaniac" type="Node" parent="."]
+script = ExtResource( 4 )
