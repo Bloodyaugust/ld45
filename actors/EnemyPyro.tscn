@@ -28,6 +28,7 @@ animate_speed_scalar = 3.0
 script = ExtResource( 4 )
 
 [node name="Burnable" parent="." instance=ExtResource( 5 )]
+avgSecondsPerIgnite = 30
 areaOfEffect = 300
 damagesParent = false
 
