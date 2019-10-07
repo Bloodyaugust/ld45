@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Alien.png" type="Texture" id=2]
-[ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=3]
-[ext_resource path="res://behaviors/WaterProducer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/LiveAndDie.gd" type="Script" id=5]
-[ext_resource path="res://behaviors/Draggable.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/ProcreateOrDie.gd" type="Script" id=7]
-[ext_resource path="res://scripts/classes/Farming.gd" type="Script" id=8]
-[ext_resource path="res://scripts/classes/Fear.gd" type="Script" id=9]
-[ext_resource path="res://doodads/IndicatorStack.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/classes/SquishyAnimate.gd" type="Script" id=3]
+[ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=4]
+[ext_resource path="res://behaviors/WaterProducer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/LiveAndDie.gd" type="Script" id=6]
+[ext_resource path="res://behaviors/Draggable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/ProcreateOrDie.gd" type="Script" id=8]
+[ext_resource path="res://scripts/classes/Farming.gd" type="Script" id=9]
+[ext_resource path="res://scripts/classes/Fear.gd" type="Script" id=10]
+[ext_resource path="res://doodads/IndicatorStack.tscn" type="PackedScene" id=11]
 
 [node name="AlienWaterer" type="Node2D" groups=[
 "Actors",
@@ -24,32 +25,36 @@ z_index = 2
 z_as_relative = false
 texture = ExtResource( 2 )
 
-[node name="IdleBehavior" type="Node" parent="."]
+[node name="SquishyAnimate" type="Node" parent="Sprite"]
 script = ExtResource( 3 )
+animate_speed_scalar = 2.5
 
-[node name="WaterProducer" parent="." instance=ExtResource( 4 )]
+[node name="IdleBehavior" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="WaterProducer" parent="." instance=ExtResource( 5 )]
 deliveryRate = 0.2
 
 [node name="LiveAndDie" type="Node" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 ageRate = 0.02
 
-[node name="Draggable" parent="." instance=ExtResource( 6 )]
+[node name="Draggable" parent="." instance=ExtResource( 7 )]
 
 [node name="ProcreateOrDie" type="Node" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 fuck_threshold = 0.4
 
 [node name="Farming" type="Node" parent="."]
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 planting_desire_per_second = 0.025
 planting_distance = 200.0
 planting_randomize_distance = 500.0
 time_to_plant = 2.5
 
 [node name="Fear" type="Node" parent="."]
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 max_fear_distance = 500.0
 
-[node name="IndicatorStack" parent="." instance=ExtResource( 10 )]
+[node name="IndicatorStack" parent="." instance=ExtResource( 11 )]
 z_index = 99

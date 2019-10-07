@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/FoeFire.png" type="Texture" id=2]
-[ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=3]
-[ext_resource path="res://scripts/Pyromaniac.gd" type="Script" id=4]
-[ext_resource path="res://behaviors/Burnable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/classes/SquishyAnimate.gd" type="Script" id=3]
+[ext_resource path="res://scripts/classes/IdleBehavior.gd" type="Script" id=4]
+[ext_resource path="res://scripts/Pyromaniac.gd" type="Script" id=5]
+[ext_resource path="res://behaviors/Burnable.tscn" type="PackedScene" id=6]
 
 [node name="EnemyFighter" type="Node2D" groups=[
-"Enemies",
 "Actors",
 "Clickables",
+"Enemies",
 ]]
 script = ExtResource( 1 )
 move_speed = 300.0
@@ -18,14 +19,18 @@ move_speed = 300.0
 z_index = 1
 texture = ExtResource( 2 )
 
-[node name="IdleBehavior" type="Node" parent="."]
+[node name="SquishyAnimate" type="Node" parent="Sprite"]
 script = ExtResource( 3 )
+animate_speed_scalar = 3.0
 
-[node name="LiveAndDie" type="Node" parent="."]
+[node name="IdleBehavior" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="Burnable" parent="." instance=ExtResource( 5 )]
+[node name="LiveAndDie" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Burnable" parent="." instance=ExtResource( 6 )]
 areaOfEffect = 300
 
 [node name="Pyromaniac" type="Node" parent="."]
-script = ExtResource( 4 )
+script = ExtResource( 5 )
