@@ -7,7 +7,7 @@
 script/source = "extends CanvasLayer
 
 onready var root := get_tree().get_root()
-onready var game_events := root.find_node(\"Node2D\")
+onready var game_events := root.find_node(\"Node2D\", true, false)
 onready var label := find_node(\"Label\", true, false)
 
 func _ready():
