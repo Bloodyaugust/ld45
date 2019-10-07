@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/IndicatorStack.gd" type="Script" id=1]
 [ext_resource path="res://sprites/HeartSymbol.png" type="Texture" id=2]
@@ -41,9 +41,27 @@ flag_disable_z = true
 spread = 33.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 80.51
+angular_velocity = 0.0
 orbit_velocity = 561.02
 orbit_velocity_random = 0.0
 radial_accel = 22.03
+
+[sub_resource type="ParticlesMaterial" id=10]
+resource_local_to_scene = true
+flag_disable_z = true
+spread = 25.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 400.0
+angular_velocity = 13.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 56.4
+angle_random = 0.06
+scale = 0.5
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+load_path = "res://.import/WaterDrop.png-e46e6d4f81758c8127997de0a0f158b9.stex"
 
 [sub_resource type="ParticlesMaterial" id=8]
 resource_local_to_scene = true
@@ -54,8 +72,6 @@ initial_velocity = 200.0
 angular_velocity = 13.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-angle = 56.4
-angle_random = 0.06
 
 [sub_resource type="StreamTexture" id=9]
 flags = 4
@@ -87,9 +103,17 @@ explosiveness = 0.09
 process_material = SubResource( 7 )
 texture = ExtResource( 4 )
 
+[node name="WaterIndicator" type="Particles2D" parent="."]
+position = Vector2( 0, 125 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+process_material = SubResource( 10 )
+texture = SubResource( 11 )
+
 [node name="FarmIndicator" type="Particles2D" parent="."]
 position = Vector2( 0, 75 )
 rotation = -4.71239
 amount = 1
+local_coords = false
 process_material = SubResource( 8 )
 texture = SubResource( 9 )
