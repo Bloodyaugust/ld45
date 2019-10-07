@@ -1,25 +1,21 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var love = get_tree().find_node("LoveIndicator")
-var fear = get_tree().find_node("FearIndicator")
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-  _resetAll()
+onready var love := $"LoveIndicator"
+onready var fear := $"FearIndicator"
   
-  pass # Replace with function body.
-
 func _resetAll():
   love.emitting = false
   fear.emitting = false
-  
-func indicateLove():
-  _resetAll()
-  love.emitting = true
 
-func indicateFear():
+func indicateNothing():
   _resetAll()
-  fear.emitting = true
+
+func indicateForBehaviour(name):
+  _resetAll()
+  match name:
+    "ProcreateOrDie":
+      love.emitting = true
+    _:
+      # arnt we all afraid a little bit sometimes
+      if rand_range(0.0, 1.0) > 0.9:
+        fear.emitting = true

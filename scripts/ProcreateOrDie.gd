@@ -1,7 +1,7 @@
 extends Node
 class_name ProcreateOrDie
 
-export var sexinessRate : float = 0.025
+export var sexinessRate : float = 0.0125
 export var fuck_threshold : float
 
 onready var actor : Actor = $"../"
@@ -21,7 +21,6 @@ func _increaseSexDrive(amount):
   desireToProcreate += amount
   
 func evaluate_priority():
-  #print("should_fuck?", desireToProcreate)
   if desireToProcreate >= fuck_threshold:
     return desireToProcreate
   else:
@@ -48,6 +47,6 @@ func execute_behavior():
           break
           
       break
-    
+
 func _ready():
   actor.register_behavior(self)

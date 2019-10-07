@@ -10,7 +10,6 @@ func evaluate_priority():
   return 0.1
 
 func execute_behavior():
-  #print("executing idle behavior")
   actor.move_speed = idleSpeed
 
   if rand_range(0.0, 1.0) > 0.99:
