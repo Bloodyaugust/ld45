@@ -2,7 +2,10 @@ extends Node2D
 class_name Actor
 
 export var move_speed : float
+
+onready var actor_poof := preload("res://doodads/ActorPoof.tscn")
 onready var indicatorStack := $"IndicatorStack"
+onready var root := get_tree().get_root()
 
 signal dies
 
@@ -20,6 +23,10 @@ func _ready():
   connect("dies", self, "_on_dies")
 
 func _on_dies():
+  var new_actor_poof := actor_poof.instance()
+  new_actor_poof.position = position
+  root.add_child(new_actor_poof)
+
   queue_free()
 
 func _process(delta):
