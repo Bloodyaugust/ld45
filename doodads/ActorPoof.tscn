@@ -31,10 +31,11 @@ z_index = 9
 z_as_relative = false
 
 [node name="Particles2D" type="Particles2D" parent="."]
-z_index = 2
+z_index = 9
 z_as_relative = false
-emitting = false
+emitting = true
 amount = 30
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource( 5 )
