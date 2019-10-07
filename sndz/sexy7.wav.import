@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sexy7.wav-db9a0128322dfc1a24d3e1bd946e64e0.sample"
+
+[deps]
+
+source_file="res://sndz/sexy7.wav"
+dest_files=[ "res://.import/sexy7.wav-db9a0128322dfc1a24d3e1bd946e64e0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

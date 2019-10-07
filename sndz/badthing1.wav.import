@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/badthing1.wav-5bef7ff2b5eed43fa6b2a20b6a8e43a5.sample"
+
+[deps]
+
+source_file="res://sndz/badthing1.wav"
+dest_files=[ "res://.import/badthing1.wav-5bef7ff2b5eed43fa6b2a20b6a8e43a5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

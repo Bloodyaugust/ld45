@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/injured4.wav-1a9c3c196429c44f4a0d9af55ee1bdc4.sample"
+
+[deps]
+
+source_file="res://sndz/injured4.wav"
+dest_files=[ "res://.import/injured4.wav-1a9c3c196429c44f4a0d9af55ee1bdc4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

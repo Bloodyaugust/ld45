@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/random1.wav-4f0cb85ce729002bc7eea6615a9f9521.sample"
+
+[deps]
+
+source_file="res://sndz/random1.wav"
+dest_files=[ "res://.import/random1.wav-4f0cb85ce729002bc7eea6615a9f9521.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
