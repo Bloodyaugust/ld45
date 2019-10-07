@@ -15,6 +15,8 @@ var hunt_desire : float = 0
 func _get_possible_targets():
   var targets = []
   for node in tree.get_nodes_in_group(target_group):
+    if node.is_in_group("AliveBurnable"):
+      continue
     if not node.aflame:
       var actor = node.get_node("..")
       targets.push_back(actor)
