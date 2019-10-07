@@ -50,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://scripts/LiveAndDie.gd"
 }, {
 "base": "Node",
+"class": "MeteorScar",
+"language": "GDScript",
+"path": "res://scripts/classes/MeteorScar.gd"
+}, {
+"base": "Node",
 "class": "ProcreateOrDie",
 "language": "GDScript",
 "path": "res://scripts/ProcreateOrDie.gd"
@@ -78,6 +83,7 @@ _global_script_class_icons={
 "IdleBehavior": "",
 "LevelLoader": "",
 "LiveAndDie": "",
+"MeteorScar": "",
 "ProcreateOrDie": "",
 "Pyromaniac": "",
 "ReproducesAsexually": "",
