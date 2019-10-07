@@ -1,5 +1,7 @@
 extends Node
 
+signal game_over
+
 onready var start_time : float = OS.get_ticks_msec()
 onready var tree := get_tree()
 onready var root := tree.get_root()
@@ -27,6 +29,10 @@ var _events : Array = [
   {
     "type": "condition",
     "function": "_do_enemy_pyro_meteor"
+  },
+  {
+    "type": "condition",
+    "function": "_do_game_over"
   }
 ]
 var _rng : RandomNumberGenerator = RandomNumberGenerator.new()
@@ -47,7 +53,7 @@ func _process(delta):
 var _startup_meteor_interval : float = 5
 var _time_to_startup_meteor : float = 5
 func _do_startup_meteor():
-  if tree.get_nodes_in_group("Aliens").size() == 0 && tree.get_nodes_in_group("Startups").size() == 0:
+  if tree.get_nodes_in_group("Waterers").size() == 0 && tree.get_nodes_in_group("Startups").size() == 0:
     _time_to_startup_meteor -= get_process_delta_time()
     if _time_to_startup_meteor <= 0:
       _time_to_startup_meteor = _startup_meteor_interval
@@ -91,3 +97,7 @@ func _do_enemy_pyro_meteor():
       var new_enemy_pyro_meteor := _enemy_pyro_meteor.instance()
       new_enemy_pyro_meteor.position = Vector2(level_rect.position.x + (level_rect.size.x * _rng.randf()), level_rect.position.y + (level_rect.size.y * _rng.randf()))
       root.add_child(new_enemy_pyro_meteor)
+
+func _do_game_over():
+  if tree.get_nodes_in_group("Plants").size() >= 20:
+    emit_signal("game_over")

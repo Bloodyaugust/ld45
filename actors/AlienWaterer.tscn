@@ -13,9 +13,10 @@
 [ext_resource path="res://doodads/IndicatorStack.tscn" type="PackedScene" id=11]
 
 [node name="AlienWaterer" type="Node2D" groups=[
-"Actors",
-"Aliens",
 "Draggables",
+"Aliens",
+"Actors",
+"Waterers",
 ]]
 z_index = 7
 z_as_relative = false
