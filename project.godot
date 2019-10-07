@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://scripts/classes/Farming.gd"
 }, {
 "base": "Node",
+"class": "Fear",
+"language": "GDScript",
+"path": "res://scripts/classes/Fear.gd"
+}, {
+"base": "Node",
 "class": "Hunt",
 "language": "GDScript",
 "path": "res://scripts/classes/Hunt.gd"
@@ -52,6 +57,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Actor": "",
 "Farming": "",
+"Fear": "",
 "Hunt": "",
 "IdleBehavior": "",
 "LevelLoader": "",

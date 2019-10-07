@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Alien.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://behaviors/Draggable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/ProcreateOrDie.gd" type="Script" id=7]
 [ext_resource path="res://scripts/classes/Farming.gd" type="Script" id=8]
+[ext_resource path="res://scripts/classes/Fear.gd" type="Script" id=9]
 
 [node name="AlienWaterer" type="Node2D" groups=[
 "Actors",
@@ -44,3 +45,7 @@ planting_desire_per_second = 0.025
 planting_distance = 200.0
 planting_randomize_distance = 500.0
 time_to_plant = 2.5
+
+[node name="Fear" type="Node" parent="."]
+script = ExtResource( 9 )
+max_fear_distance = 500.0
