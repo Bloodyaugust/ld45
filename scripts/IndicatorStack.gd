@@ -15,7 +15,9 @@ func indicateForBehaviour(name):
   match name:
     "ProcreateOrDie":
       love.emitting = true
+    "Fear":
+      fear.emitting = true
     _:
       # arnt we all afraid a little bit sometimes
-      if rand_range(0.0, 1.0) > 0.9:
+      if rand_range(0.0, 1.0) > 0.999:
         fear.emitting = true
