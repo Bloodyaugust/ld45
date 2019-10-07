@@ -5,7 +5,15 @@ export var move_speed : float
 
 onready var actor_poof := preload("res://doodads/ActorPoof.tscn")
 onready var indicatorStack := $"IndicatorStack"
-onready var root := get_tree().get_root()
+onready var tree := get_tree()
+onready var root := tree.get_root()
+onready var level_base := root.find_node("LevelBase", true, false)
+onready var level_rect : Rect2 = level_base.get_rect()
+
+onready var level_min_x = level_rect.position.x
+onready var level_max_x = level_min_x + level_rect.size.x
+onready var level_min_y = level_rect.position.x
+onready var level_max_y = level_min_y + level_rect.size.y
 
 signal dies
 
@@ -44,6 +52,8 @@ func _process(delta):
       indicatorStack.indicateForBehaviour(behavior_priorities[0]["name"])
 
     system_behaviors[behavior_priorities[0]["name"]].execute_behavior()
+
+  position = Vector2(clamp(position.x, level_min_x, level_max_x), clamp(position.y, level_min_y, level_max_y))  
 
 func _sort_behavior_priorities(a, b):
   return a["priority"] > b["priority"]

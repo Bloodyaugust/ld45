@@ -58,7 +58,7 @@ process_material = SubResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="Explosion" type="Particles2D" parent="."]
-emitting = false
+emitting = true
 amount = 25
 one_shot = true
 explosiveness = 1.0
