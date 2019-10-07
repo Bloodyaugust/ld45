@@ -5,8 +5,8 @@
 [ext_resource path="res://behaviors/WaterConsumer.tscn" type="PackedScene" id=3]
 
 [node name="Twig" type="Node2D" groups=[
-"Actors",
 "Plants",
+"Actors",
 ]]
 script = ExtResource( 1 )
 

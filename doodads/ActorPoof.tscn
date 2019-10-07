@@ -27,10 +27,13 @@ scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [node name="ActorPoof" type="Node2D"]
+z_index = 9
+z_as_relative = false
 
 [node name="Particles2D" type="Particles2D" parent="."]
 z_index = 2
 z_as_relative = false
+emitting = false
 amount = 30
 one_shot = true
 explosiveness = 1.0
