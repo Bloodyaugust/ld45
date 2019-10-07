@@ -5,9 +5,9 @@ export var ageRate:float
 
 onready var actor = $"../"
 
-var health = 1.0
+var health = rand_range(90, 100) / 100.0
 var age = 0.0
-var maxAge = 1.0
+var maxAge = rand_range(90, 100) / 100.0
 
 func _ready():
   pass
