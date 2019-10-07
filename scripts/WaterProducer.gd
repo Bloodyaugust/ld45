@@ -52,4 +52,4 @@ func evaluate_priority():
   if target == null:
     return 0
   else:
-    return 0.3
+    return 0.4
