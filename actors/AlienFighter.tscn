@@ -16,7 +16,8 @@
 "Draggables",
 "Defenders",
 ]]
-z_index = 2
+z_index = 7
+z_as_relative = false
 script = ExtResource( 1 )
 move_speed = 60.0
 

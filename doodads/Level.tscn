@@ -7,13 +7,14 @@
 "Doodads",
 ]]
 z_index = 1
+z_as_relative = false
 texture = ExtResource( 1 )
 
 [node name="LevelBase" type="Sprite" parent="." groups=[
 "Doodads",
 ]]
 position = Vector2( -9.01251, -185.659 )
-z_index = -1
+z_as_relative = false
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3400, 1700 )

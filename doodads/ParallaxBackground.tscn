@@ -8,6 +8,8 @@
 motion_scale = Vector2( 0.4, 0.4 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+z_index = -1
+z_as_relative = false
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 8000, 4800 )

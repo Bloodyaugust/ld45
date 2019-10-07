@@ -16,7 +16,7 @@ func evaluate_priority():
     if distance >= max_fear_distance * 3:
       return 0
     if distance < max_fear_distance * 3 && distance >= max_fear_distance * 2:
-      return 0.5
+      return 0.3
     if distance < max_fear_distance * 2 && distance > max_fear_distance:
       return 0.75
     return 1

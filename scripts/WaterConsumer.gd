@@ -8,7 +8,7 @@ signal watered
 onready var huskScene = load(huskPath)
 onready var actor = $"../"
 
-var water = 1
+var water = rand_range(90, 100) / 100.0
 
 func _ready():
 	pass
