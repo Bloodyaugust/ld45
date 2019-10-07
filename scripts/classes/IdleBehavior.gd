@@ -21,9 +21,11 @@ func execute_behavior():
   actor.move_toward_target(randomTarget)
 
 func _pickRandomTarget():
-  var rx = (level_rect.position.x + (level_rect.size.x * randf()))
-  var ry = (level_rect.position.y + (level_rect.size.y * randf()))
-  randomTarget = Vector2(rx, ry)
+  var min_x = level_rect.position.x
+  var max_x = min_x + level_rect.size.x
+  var min_y = level_rect.position.x
+  var max_y = min_y + level_rect.size.y
+  randomTarget = Vector2(rand_range(min_x, max_x), rand_range(min_y, max_y))
 
 func _ready():
   _pickRandomTarget()

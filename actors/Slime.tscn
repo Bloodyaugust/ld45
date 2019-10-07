@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Slime.png" type="Texture" id=2]
 [ext_resource path="res://behaviors/WaterConsumer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/classes/ReproducesAsexually.gd" type="Script" id=4]
+[ext_resource path="res://behaviors/Burnable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/LiveAndDie.gd" type="Script" id=6]
 
 [node name="Slime" type="Node2D" groups=[
 "Actors",
@@ -21,4 +23,15 @@ texture = ExtResource( 2 )
 [node name="ReproducesAsexually" type="Node2D" parent="."]
 script = ExtResource( 4 )
 groupName = "Slimes"
+
+[node name="Burnable" parent="." groups=[
+"AliveBurnable",
+] instance=ExtResource( 5 )]
+aflame = false
+avgSecondsPerIgnite = 1000000
+areaOfEffect = 200
+damagePerSec = 0.1
+
+[node name="LiveAndDie" type="Node" parent="."]
+script = ExtResource( 6 )
 [connection signal="watered" from="WaterConsumer" to="ReproducesAsexually" method="_on_WaterConsumer_watered"]
