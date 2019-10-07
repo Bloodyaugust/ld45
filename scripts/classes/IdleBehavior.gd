@@ -1,9 +1,8 @@
 extends Node
 class_name IdleBehavior
 
-onready var tree := get_tree()
-onready var root := tree.get_root()
 onready var actor : Actor = $"../"
+onready var root := get_tree().get_root()
 onready var level_base := root.find_node("LevelBase", true, false)
 onready var level_rect : Rect2 = level_base.get_rect()
 
