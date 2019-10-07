@@ -54,7 +54,7 @@ time_to_plant = 2.5
 
 [node name="Fear" type="Node" parent="."]
 script = ExtResource( 10 )
-max_fear_distance = 500.0
+max_fear_distance = 300.0
 
 [node name="IndicatorStack" parent="." instance=ExtResource( 11 )]
 z_index = 99
