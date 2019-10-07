@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/classes/Actor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/AlienFighter.png" type="Texture" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://behaviors/Draggable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/ProcreateOrDie.gd" type="Script" id=6]
 [ext_resource path="res://scripts/classes/Hunt.gd" type="Script" id=7]
+[ext_resource path="res://doodads/IndicatorStack.tscn" type="PackedScene" id=8]
 
 [node name="AlienFighter" type="Node2D" groups=[
 "Actors",
+"Defenders",
 "Aliens",
 "Draggables",
-"Defenders",
 ]]
 z_index = 2
 script = ExtResource( 1 )
@@ -40,3 +41,6 @@ attack_damage_per_second = 0.25
 attack_distance = 200.0
 hunt_desire_per_second = 0.05
 target_group = "Enemies"
+
+[node name="IndicatorStack" parent="." instance=ExtResource( 8 )]
+z_index = 99

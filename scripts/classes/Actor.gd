@@ -2,6 +2,7 @@ extends Node2D
 class_name Actor
 
 export var move_speed : float
+onready var indicatorStack := $"IndicatorStack"
 
 signal dies
 
@@ -30,7 +31,11 @@ func _process(delta):
     })
   behavior_priorities.sort_custom(self, "_sort_behavior_priorities")
   
+
   if behavior_priorities.size() > 0:
+    if indicatorStack:
+      indicatorStack.indicateForBehaviour(behavior_priorities[0]["name"])
+
     system_behaviors[behavior_priorities[0]["name"]].execute_behavior()
 
 func _sort_behavior_priorities(a, b):
