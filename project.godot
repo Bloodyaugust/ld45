@@ -92,9 +92,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ld45"
-run/main_scene="res://scenes/main.tscn"
-config/icon="res://icon.png"
+config/name="Panspermia"
+run/main_scene="res://scenes/splash.tscn"
+config/icon="res://media/PanspermiaSplashScreenArt.png"
 
 [autoload]
 

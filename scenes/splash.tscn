@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://media/PanspermiaSplashScreenArt.png" type="Texture" id=1]
+[ext_resource path="res://media/PanspermiaLogo.png" type="Texture" id=2]
+[ext_resource path="res://scripts/classes/SquishyAnimate.gd" type="Script" id=3]
+[ext_resource path="res://resources/themes/kenney/kenney.tres" type="Theme" id=4]
+[ext_resource path="res://resources/fonts/kenney_pixel.tres" type="DynamicFont" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+onready var tree := get_tree()
+
+func _unhandled_input(event):
+  if event is InputEventKey:
+    tree.change_scene(\"res://scenes/main.tscn\")
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+editor/display_folded = true
+position = Vector2( 512, 120 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="SquishyAnimate" type="Node" parent="CanvasLayer/Sprite"]
+script = ExtResource( 3 )
+animate_speed_scalar = 1.2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 112.0
+margin_top = 450.0
+margin_right = 912.0
+margin_bottom = 600.0
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+margin_right = 800.0
+margin_bottom = 150.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+text = "Guide your people, help them re-colonize what's left of their planet! Press any key to begin"
+align = 1
+valign = 1
+autowrap = true
