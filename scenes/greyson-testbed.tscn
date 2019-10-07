@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/GameEvents.gd" type="Script" id=1]
 [ext_resource path="res://doodads/MainCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/LevelBorder.png" type="Texture" id=3]
 [ext_resource path="res://sprites/BarrenTexture.png" type="Texture" id=4]
 [ext_resource path="res://doodads/ParallaxBackground.tscn" type="PackedScene" id=5]
-[ext_resource path="res://actors/EnemyPyro.tscn" type="PackedScene" id=6]
-[ext_resource path="res://actors/SlimeHusk.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -29,15 +27,3 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 3400, 1700 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
-
-[node name="EnemyFighter" parent="." instance=ExtResource( 6 )]
-position = Vector2( -467.468, -292.89 )
-
-[node name="SlimeHusk" parent="." instance=ExtResource( 7 )]
-position = Vector2( -94.7493, -312.507 )
-
-[node name="SlimeHusk2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -246.779, -160.477 )
-
-[node name="SlimeHusk3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -60.4197, -145.764 )
