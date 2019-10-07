@@ -12,8 +12,8 @@ onready var level_rect : Rect2 = level_base.get_rect()
 
 onready var level_min_x = level_rect.position.x
 onready var level_max_x = level_min_x + level_rect.size.x
-onready var level_min_y = level_rect.position.x
-onready var level_max_y = level_min_y + level_rect.size.y
+onready var level_min_y = level_rect.position.y
+onready var level_max_y = level_min_y + level_rect.size.y - 300
 
 signal dies
 
