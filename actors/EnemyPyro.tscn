@@ -31,6 +31,7 @@ script = ExtResource( 5 )
 
 [node name="Burnable" parent="." instance=ExtResource( 6 )]
 areaOfEffect = 300
+damagesParent = false
 
 [node name="Pyromaniac" type="Node" parent="."]
 script = ExtResource( 5 )
