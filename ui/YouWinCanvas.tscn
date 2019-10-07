@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/themes/kenney/kenney.tres" type="Theme" id=1]
+[ext_resource path="res://resources/fonts/kenney_pixel.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+onready var root := get_tree().get_root()
+onready var game_events := root.find_node(\"Node2D\")
+onready var label := find_node(\"Label\", true, false)
+
+func _ready():
+  game_events.connect(\"game_over\", self, \"_do_game_over\")
+  
+func _do_game_over():
+  label.visible = true
+"
+
+[node name="YouWinCanvas" type="CanvasLayer"]
+script = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+visible = false
+margin_right = 610.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Congratulations on terraforming this barren planet, you win!"
+align = 1
+valign = 1
