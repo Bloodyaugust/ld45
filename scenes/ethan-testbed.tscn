@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/LevelBorder.png" type="Texture" id=1]
 [ext_resource path="res://sprites/BarrenTexture.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://actors/TwigHusk.tscn" type="PackedScene" id=8]
 [ext_resource path="res://actors/AlienWaterer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://actors/Slime.tscn" type="PackedScene" id=10]
+[ext_resource path="res://actors/Tree.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Camera2D
@@ -140,3 +141,15 @@ position = Vector2( -330.505, -341.184 )
 
 [node name="Slime10" parent="." instance=ExtResource( 10 )]
 position = Vector2( -455.108, -541.127 )
+
+[node name="Tree" parent="." instance=ExtResource( 11 )]
+position = Vector2( -518.86, -219.481 )
+
+[node name="Tree2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 333.075, -732.38 )
+
+[node name="Tree3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -527.553, 365.862 )
+
+[node name="Tree4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 234.552, 107.964 )

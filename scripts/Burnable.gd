@@ -4,7 +4,7 @@ class_name Burnable
 
 export var aflame := false
 export var avgSecondsPerIgnite := 40
-export var areaOfEffect = 500
+export var areaOfEffect = 300
 export var damagesParent := true
 export var damagePerSec := 0.2
 
