@@ -3,8 +3,10 @@ extends Node2D
 class_name Burnable
 
 export var aflame := false
-export var avgSecondsPerIgnite := 20
+export var avgSecondsPerIgnite := 40
 export var areaOfEffect = 500
+export var damagesParent := true
+export var damagePerSec := 0.2
 
 const avgSecPerFlameScatter = 20
 
@@ -20,6 +22,8 @@ func _process(delta):
     $Flame3.visible = true
     _roll_for_ignite(delta)
     _roll_for_flame_scramble(delta)
+    if damagesParent:
+      actor.get_node("LiveAndDie").takeDamage(delta * damagePerSec)
 
 func _roll_for_ignite(delta):
   var roll = (randf() / 10)
