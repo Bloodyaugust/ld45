@@ -21,7 +21,7 @@ echo "-----------------------------"
 godot --export "Linux/X11" build/linux/ld45.x86_64 -v
 echo "EXPORTING FOR OSX"
 echo "-----------------------------"
-godot --export "Mac OSX" build/osx/ld45.dmg -v
+godot --export "Mac OSX" build/osx/ld45.zip -v
 echo "EXPORTING FOR WINDOZE"
 echo "-----------------------------"
 godot --export "Windows Desktop" build/win/ld45.exe -v
