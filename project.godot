@@ -104,6 +104,10 @@ store="*res://lib/redux/store.gd"
 reducers="*res://lib/redux/reducers.gd"
 main="*res://lib/redux/main.gd"
 
+[display]
+
+window/size/resizable=false
+
 [rendering]
 
 environment/default_clear_color=Color( 0.403922, 0.403922, 0.403922, 1 )
